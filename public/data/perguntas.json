@@ -1,0 +1,11 @@
+[
+    {
+        "id": "q1",
+        "titulo": "pergunta 1",
+        "prompt": "qual a cor da sola do seu pé",
+        "reposta": ["preta", "cor preta"],
+        "dica": "é só olhar para ele",
+        "icon": ""
+
+    }
+]

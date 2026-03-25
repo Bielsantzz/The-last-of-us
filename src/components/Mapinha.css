@@ -1,5 +1,5 @@
 body{
-    background: #c3e9fc;
+    background: #5e95b1;
 }
 
 .mapinha{
@@ -10,14 +10,69 @@ body{
 
 .erro{
     color: red;
-    background: #ffdddd;
+    background: #000000;
     font-size: 1.2rem;
 }
 
 .mapa{
     width: 100%;
     height: 320px;
-    border: 2px solid #6bcdfe;
+    border: 2px solid #000000;
     border-radius: 10px;
 }
 
+.painel{
+    background: #ffffff;
+    border: 2px solid #bee3fc;
+    padding: 1rem;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.painel-topo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.botao{
+    background: #116c90;
+    color: white;
+    border: 0;
+    padding: 6px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+botao-hover{
+    background: #012736;
+    text-decoration: underline;
+}
+
+.painel span{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #012736;
+}
+
+.lista-pontos{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lsita-pontos-item{
+    display: grid;
+    grid-template-columns: 48px 1fr 110px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 0;
+    border-top: 1px dashed #ddd;
+}
+
+.dist{
+    text-align: right;
+    color: #116c90;
+}

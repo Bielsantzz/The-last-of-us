@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaf
 
 import "leaflet/dist/leaflet.css"
 import { useEffect, useRef, useState } from "react";
+import L from "leaflet";
 
 export default function Mapinha(){
 
@@ -98,13 +99,13 @@ export default function Mapinha(){
 
     return (
         <section className="mapinha">
-            <h1> Mapinhaaa </h1>
+            <h1> Mapinha </h1>
 
             {erro && <div className="erro">{erro}</div>}
 
 
-            <section className="Painel">
-                <div className=" Painel-topo">
+            <section className="painel">
+                <div className=" painel-topo">
                     <span>Pontos Adicionados</span>
                     <button className="botao"
                             onClick={limparpontos}>
@@ -112,7 +113,28 @@ export default function Mapinha(){
                     </button>
 
 
+
                 </div>
+
+                {pontos.length === 0?(
+                   <p>Nenhum Ponto Adicionad. Clique no Mapa para Adicionar</p> 
+                ): (
+                    <ul className="lista-pontos">
+                        {pontosOrdenados.map((p) => (
+                            <li key={p.id} className="lista-pontos-item">
+                                <span>#{p.id} </span>
+                                <span>
+                                    {p.lat.toFixed(5)}, {p.lng.toFixed(5)}
+                                </span>
+                                <span className="dist">
+                                    {formatarM(p.distanciaM)}
+                                </span>
+
+
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </section>
 
             <MapContainer 
@@ -131,6 +153,18 @@ export default function Mapinha(){
                         <Popup>Você está aqui!!! </Popup>
                     </Marker>
                 )}
+
+                {pontos.map((p)=> (
+                    <Marker key={p.id} position={[p.lat, p.lng]}>
+                        <Popup>
+                            <div>
+                                <strong>ponto #{p.id}</strong>
+                                <p>Distancia: {formatarM(p.distanciaM)}</p>
+                            </div>
+                        </Popup>
+                    </Marker>
+                ))}
+                <ClickHandler onAdd={adicionarPonto}/>
 
 
             </MapContainer>
