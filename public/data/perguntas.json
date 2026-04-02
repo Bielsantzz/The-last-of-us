@@ -1,31 +1,28 @@
 [
     {
-        "id": "1",
+        "id": "q1",
         "titulo": "pergunta 1",
         "prompt": "qual a cor da sola do seu pé",
         "reposta": ["preta", "rosa"],
         "dica": "é só olhar para ele",
-        "icon": ""
-
+        "icon": "alvo.png"
     },
 
     {
-        "id": "2",
+        "id": "q2",
         "titulo": "pergunta 2",
         "prompt": "em que dia você nasceu",
         "reposta": ["Fevereiro", "Março"],
-        "dica": "é o segundo mês do ano",
-        "icon": ""
-
+        "dica": "é o segundo mês do ano", 
+        "icon": "controlegame.png"
     },
 
     {
-        "id": "3",
+        "id": "q3",
         "titulo": "pergunta 3",
         "prompt": "qual a cor dos meus olhos",
         "reposta": ["castanho", " vermelho"],
         "dica": "é só olhar atentamente para mim",
-        "icon": ""
-
+        "icon": "maquinatigrinho.png"
     }
 ]

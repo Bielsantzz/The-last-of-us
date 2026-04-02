@@ -1,10 +1,10 @@
-import Mapinha from "./components/Mapinha";
-import "./components/Mapinha.css"
+import Fases from "./components/fases"
 
 
 export default function App(){
 
   return(
-    <Mapinha/>
+    <Fases/>
   )
+  
 }
