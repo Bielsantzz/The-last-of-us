@@ -40,6 +40,7 @@ export default function Fases(){
         }
     }, [resolvidas,total])
 
+    
     return(
         <main className="questoes">
             <header className="q-header">

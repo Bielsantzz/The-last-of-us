@@ -1,0 +1,65 @@
+/*import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Telex&display=swap" );
+*/
+
+:root{
+    --bg: #464646;
+    --bg2:  #6d6d6d;
+    --text:  #fff;
+    --primary: #a3a3a3;
+    --primary-claro: #c9c0c0;
+    --primary-escuro: #918989;
+    --primary-text:  #ffdddd;
+ 
+    --secundary: #584741;
+    --secundary-claro: #695844;
+    --secundary-escuro: #496d5b;
+    --secundary-text: #284436;
+    --ring: #40583a;
+    --border: #31585f;
+    --border2:  #395683;
+    --border3:  #325f61;
+    --accent:  #513c8d;
+    --accent-bg: #4c4da8;
+    --accent-text: #fff;
+ 
+    --shadow: #fff;
+    --hover-shadow: #a52f7e;
+    --accent-shadow: #9e319e;
+    --locked: #000000;
+ 
+    --solved-border: #fff;
+    --solved-bg: #fff;
+ 
+    --white: #fff;
+    --black: #fff;
+    --error: #cf3e3e;
+    --success:  #6bc747;
+ 
+}
+ 
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+}
+
+h1,h2,h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:focus-visible{
+    outline: 3px solid var(--ring);
+    outline-offset: 2px; 
+}
