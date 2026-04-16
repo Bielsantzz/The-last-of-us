@@ -1,17 +1,18 @@
 import { useMemo, useState } from "react"
 import QUESTOES from "../../public/data/perguntas.json"
 import "./fases.css"
+import IconGrid from "./iconGrid";
 
 
 
 export default function Fases(){
     const [selecionada, setSelecionada] = useState(null)
-    const [trancada, setTrancadas] = useState (0);
+    const [trancadas, setTrancadas] = useState (0);
     const [resolvidas, setResolvidas] = useState (() => new Set())
     
     const total = QUESTOES.length
 
-    const handleOpen = (q) => setselecionada(q);
+    const handleOpen = (q) => setSelecionada(q);
     const handleClose = () => setselecionada(null);
 
     const handleCorrect = (id) => {
@@ -65,9 +66,16 @@ export default function Fases(){
 
 
                     </div>
-                
-
             </header>
+            <IconGrid
+                questoes = {QUESTOES}
+                onOpen = {handleOpen}
+                modalOpen = {Boolean(selecionada)}
+                trancada = {trancadas}
+                resolvidas = {resolvidas}
+            
+            
+            />
         </main>
     )
 
