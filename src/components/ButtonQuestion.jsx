@@ -17,8 +17,9 @@ export default function ButtonQuestion({questoes,onOpen, modalOpen,bloqueada, so
         <li className="icon-grid-item">
             <button
                 type="button"
-                className={`icon-button ${bloqueada ??
-                    "icon-button--locked"} ${solu ?? "icon-button--salved"}`}
+                className={`icon-button ${bloqueada ?
+                    "icon-button--locked": ""} ${solu ? 
+                    "icon-button--salved": ""}`}
                     aria-haspopup="dialog"
                     aria-controls={queId}
                     aria-label={aria}

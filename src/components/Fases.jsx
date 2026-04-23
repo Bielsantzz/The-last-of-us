@@ -2,6 +2,7 @@ import { useMemo, useState } from "react"
 import QUESTOES from "../../public/data/perguntas.json"
 import "./fases.css"
 import IconGrid from "./iconGrid";
+import QuestionDialog from "./QuestionDialog";
 
 
 
@@ -76,11 +77,17 @@ export default function Fases(){
             
             
             />
+
+            {selecionada && (
+                <QuestionDialog
+                        questoes = {selecionada}
+                        index={QUESTOES.findIndex((q)=> q.id === selecionada.id)}
+                        total = {total}
+                        onClose = {handleClose}
+                        onCorrect = {handleCorrect}
+                />
+            )}
+
         </main>
     )
-
-
-
-
-
 }
