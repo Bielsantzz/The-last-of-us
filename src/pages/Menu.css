@@ -1,0 +1,71 @@
+.menu {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url("../assets/imagemhome.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-left: 5vw;
+}
+
+/* container do menu */
+.menu-container {
+  display: flex;
+  flex-direction: column; /* mantém os itens em coluna */
+  gap: 20px;
+
+  width: 90%;
+  max-width: 500px;
+}
+
+/* título */
+.menu-container h1 {
+  color: white;
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px black;
+}
+
+/* botões */
+.menu-container button {
+  background: transparent;
+  border: none;
+  color: white;
+
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: left;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover */
+.menu-container button:hover {
+  color: #30a83a;
+  transform: translateX(10px);
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .menu {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: column; /* continua em coluna no celular */
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-container button {
+    text-align: center;
+  }
+}
