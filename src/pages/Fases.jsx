@@ -47,8 +47,7 @@ export default function Fases(){
         <main className="questoes">
             <header className="q-header">
                     <h1 className="q-title">The Last of Us</h1>
-                    <p className="q-subtitle"> Toque no icone para abrir a 
-                    pergunta</p>
+                    <p className="q-subtitle"> Selecione a fase:</p>
 
                     <div className="progress">
                         <div
