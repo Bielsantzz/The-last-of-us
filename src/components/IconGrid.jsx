@@ -1,4 +1,5 @@
 import ButtonQuestion from "./ButtonQuestion";
+import "./IconGrid.css"
 
 
 export default function IconGrid({questoes,

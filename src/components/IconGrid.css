@@ -1,0 +1,13 @@
+.icon-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.icon-grid-container {
+    width: 100%;
+    margin-top: 30px;
+}
