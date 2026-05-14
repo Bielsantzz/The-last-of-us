@@ -14,7 +14,7 @@ export default function Fases(){
     const total = QUESTOES.length
 
     const handleOpen = (q) => setSelecionada(q);
-    const handleClose = () => setselecionada(null);
+    const handleClose = () => setSelecionada(null);
 
     const handleCorrect = (id) => {
         setResolvidas((prev) => {

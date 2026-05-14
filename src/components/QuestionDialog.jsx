@@ -10,6 +10,7 @@ export default function QuestionDialog({
 }){
     const titleId = useId();
 
+    const dialog = useRef(null)
     const CloseBtn = useRef(null);
     const prevFocus = useRef(null);
     
@@ -54,10 +55,10 @@ export default function QuestionDialog({
         CloseBtn.current?.focus()
 
         const onkey = (ev) => {if (ev.key === "Escape") onClose()}
-        window.removeEventListener("keydown", onkey)
+        window.addEventListener("keydown", onkey)
 
         return() => {
-            document.body.style.overflow = PrevOverflow
+            document.body.style.overflow = prevOverFLow
             window.removeEventListener("keydown",onkey)
             if (prevFocus.current instanceof HTMLElement) prevFocus.current.focus()
         }
@@ -68,8 +69,9 @@ export default function QuestionDialog({
         <div
         id={`dialog-${questoes.id}`}
         role="dialog"
-        aria-modal="true">
+        aria-modal="true"
         airal-labelledby={titleId}
+        className="dialog">
         
         <header className="dialogo-header">
             <h2 id={titleId} className="dialog-title">
@@ -89,8 +91,53 @@ export default function QuestionDialog({
 
         </header>
 
+        <section className="dialog-content"tabIndex={-1}>
+            <div className="dialog-card">
+                <>
+                <p className="question-prompt">
+                    {questoes.prompt}
+                </p>
+                <form className="question-form" onSubmit={handleSubmit}>
+                    <label className="question-label" htmlFor="resposta">Sua Resposta:</label>
+                    <input 
+                        id="resposta"
+                        className="question-input"
+                        type="text"
+                        autoComplete="off"
+                        aria-describedby="feedback"
+                        aria-invalid={feedback.type === "error" ? "true" : "false"}
+                        value={resposta}
+                        onChange={ (e) => setResposta(e.target.value)}
+                        disabled={isCorrect}
+                        placeholder="escreva sua resposta aqui"
+                        />
+                </form>
+                </>
+                <div
+                className={`question-feedback question-feedback --${feedback.type}`}
+                id="feedback"
+                aria-live="polite"
+                >
+                    {feedback.msg}
+                </div>
+
+                 {isCorrect && (
+                <div className="question-actions">
+                <button
+                className="btn btn-success"
+                type="button"
+                aria-label="Avançar para a próxima pergunta"
+                onClick={() => {
+                  onCorrect(questoes.id);
+                  onClose();
+                }}
+              >
+                Próxima pergunta
+              </button>
+            </div>
+          )}
         </div>
-    )
-
+      </section>
+    </div>
+  );
 }
-
